@@ -9,8 +9,9 @@ public class Player : MonoBehaviour
     #region Variable Initialization
 
     public GameObject player;
-    public float moveSpeed,rotationSpeed = 2, gravity = 100, health = 100, oxygenDepletionRate;
-
+    public float moveSpeed, rotationSpeed = 2, gravity = 100, oxygenDepletionRate;
+    const float TotalHealth = 100;
+    public static float currentHealth;
     private float oxygen = 100, cameraY, cameraX;
     private Vector3 moveDirection;
     private CharacterController charController;
@@ -26,6 +27,7 @@ public class Player : MonoBehaviour
         cameraTrans = playerTrans.Find("Player Camera").GetComponent<Transform>();
         cameraX = 0f;
         cameraY = 0f;
+        currentHealth = TotalHealth;
     }
 
 
@@ -50,8 +52,8 @@ public class Player : MonoBehaviour
 
     public void Damage(float deltaHealth)
     {
-        health -= deltaHealth;
-        if (health <= 0 | oxygen <= 0)
+        currentHealth -= deltaHealth;
+        if (currentHealth <= 0 | oxygen <= 0)
         {
             GameOver();
         }
@@ -59,9 +61,9 @@ public class Player : MonoBehaviour
 
     public void Heal( float deltaHealth)
     {
-        if (health < 100)
+        if (currentHealth < 100)
         {
-            health += deltaHealth;
+            currentHealth += deltaHealth;
         }
     }
     public void GameOver()
