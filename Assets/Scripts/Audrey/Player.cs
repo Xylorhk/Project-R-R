@@ -77,7 +77,10 @@ public class Player : MonoBehaviour
         
 
     }
-
+    public void resetOxygen()
+    {
+        currentOxygen = totalOxygen;
+    }
     public void OnControllerColliderHit(ControllerColliderHit hit)
     {
         IInventoryItem item = hit.collider.GetComponent<IInventoryItem>();
