@@ -20,8 +20,8 @@ public class SphereItem : MonoBehaviour
         get { return _Image; }
     }
 
-    public abstract void OnPickup()
-    {
-        gameObject.SetActive(false);
-    }
+    //public abstract void OnPickup()
+    //{
+    //    gameObject.SetActive(false);
+    //}
 }
