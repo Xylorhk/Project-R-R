@@ -18,10 +18,6 @@ public class TimerControl : MonoBehaviour
     {
         outPutText.text = timeLeft.ToString();
         timeLeft -= Time.deltaTime;
-        if (timeLeft < 0)
-        {
-            //GameOver(); // ends game
-        }
     }
     public void resetOxygen()
     {

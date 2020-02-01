@@ -326,7 +326,6 @@ GameObject:
   - component: {fileID: 291055342}
   - component: {fileID: 291055341}
   - component: {fileID: 291055340}
-  - component: {fileID: 291055343}
   m_Layer: 5
   m_Name: Text
   m_TagString: Untagged
@@ -365,6 +364,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 22b695f4c3c91584b8e1c398880f802c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  doomCount: 300
   timeLeft: 120
 --- !u!114 &291055341
 MonoBehaviour:
@@ -406,24 +406,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 291055338}
   m_CullTransparentMesh: 0
---- !u!114 &291055343
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 291055338}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 72b3a362fe8be484d9718037fd18ce85, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  inventory: {fileID: 0}
-  player: {fileID: 0}
-  moveSpeed: 0
-  rotationSpeed: 2
-  gravity: 100
-  oxygenDepletionRate: 0
 --- !u!1 &523662401
 GameObject:
   m_ObjectHideFlags: 0
@@ -636,7 +618,7 @@ GameObject:
   - component: {fileID: 550684902}
   m_Layer: 0
   m_Name: Point Light
-  m_TagString: Untagged
+  m_TagString: Light source
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1021,6 +1003,21 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 2218462790121048634, guid: efcd48381c345f54b8582447031717dd,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2218462790480627481, guid: efcd48381c345f54b8582447031717dd,
+        type: 3}
+      propertyPath: oxygenDepletionRate
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2218462790480627481, guid: efcd48381c345f54b8582447031717dd,
+        type: 3}
+      propertyPath: moveSpeed
+      value: 8
+      objectReference: {fileID: 0}
     - target: {fileID: 2218462790480627482, guid: efcd48381c345f54b8582447031717dd,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -1081,5 +1078,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: Player
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 2218462790480627480, guid: efcd48381c345f54b8582447031717dd, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: efcd48381c345f54b8582447031717dd, type: 3}

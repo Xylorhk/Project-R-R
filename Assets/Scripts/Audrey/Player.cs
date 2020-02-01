@@ -11,9 +11,10 @@ public class Player : MonoBehaviour
 
     public GameObject player;
     public float moveSpeed, rotationSpeed = 2, gravity = 100, oxygenDepletionRate;
-    const float TotalHealth = 100;
+    const float totalHealth = 100;
+    const float totalOxygen = 100;
     public static float currentHealth;
-    private float oxygen = 100, cameraY, cameraX;
+    private float currentOxygen = 100, cameraY, cameraX;
     private Vector3 moveDirection;
     private CharacterController charController;
     private Transform playerTrans, cameraTrans;
@@ -28,7 +29,8 @@ public class Player : MonoBehaviour
         cameraTrans = playerTrans.Find("Player Camera");
         cameraX = 0f;
         cameraY = 0f;
-        currentHealth = TotalHealth;
+        currentHealth = totalHealth;
+        currentOxygen = totalOxygen;
     }
 
 
@@ -50,12 +52,13 @@ public class Player : MonoBehaviour
         playerTrans.rotation = Quaternion.Euler(0f, cameraX, 0f);
         #endregion
         Heal(Time.deltaTime * (float)0.1);
+        currentOxygen -= Time.deltaTime;
     }
 
     public void Damage(float deltaHealth)
     {
         currentHealth -= deltaHealth;
-        if (currentHealth <= 0 | oxygen <= 0)
+        if (currentHealth <= 0 | currentOxygen <= 0)
         {
             GameOver();
         }
