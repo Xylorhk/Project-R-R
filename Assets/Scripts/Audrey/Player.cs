@@ -4,6 +4,8 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 public class Player : MonoBehaviour
 {
+    public Inventory inventory;
+
     #region Variable Initialization
 
     public GameObject player;
@@ -67,6 +69,15 @@ public class Player : MonoBehaviour
         Debug.Log("Game Over");
         
 
+    }
+
+    public void OnControllerColliderHit(ControllerColliderHit hit)
+    {
+        IInventoryItem item = hit.collider.GetComponent<IInventoryItem>();
+        if (item != null)
+        {
+            inventory.AddItem(item);
+        }
     }
 
     public void Victory()

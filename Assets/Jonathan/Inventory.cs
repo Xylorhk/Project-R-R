@@ -7,11 +7,11 @@ using UnityEngine;
 
 public class Inventory : MonoBehaviour
 {
-    private class int SLOTS = 9;
+    private const int SLOTS = 9;
     private List<IInventoryItem> mItems = new List<IInventoryItem>();
     public event EventHandler<InventoryEventArgs> ItemAdded;
 
-    public void AddItem(IIventoryItem item)
+    public void AddItem(IInventoryItem item)
     {
         if(mItems.Count < SLOTS)
         {
