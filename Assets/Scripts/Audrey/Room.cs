@@ -39,10 +39,7 @@ public class Room : MonoBehaviour
     {
         if (isPowered != powerState)
         {
-            isPowered = !isPowered;
-            ToggleDoors();
-            if (timesToggled < 1) TriggerEvent();
-            timesToggled++;
+            TogglePower();
         }
         if (isPowered & timeSincePowered > 0f)
         {
@@ -59,12 +56,18 @@ public class Room : MonoBehaviour
             monster.SetActive(true);
         }
     }
-    private void OnTriggerEnter(Collider other)
+
+    private void TogglePower()
     {
-        if (other.gameObject.name == "Player" & monster.activeSelf)
+        isPowered = !isPowered;
+        ToggleDoors();
+        if (timesToggled < 1) TriggerEvent();
+        timesToggled++;
+        if (isPowered & providesOxygen)
         {
-            DamagePlayer();
+            player.globalOxygen = true;
         }
+        else if (!isPowered & providesOxygen) player.globalOxygen = false;
     }
     void ToggleDoors() //Toggles state of all doors connected to this room.
     {
@@ -74,14 +77,22 @@ public class Room : MonoBehaviour
         }
     }
 
-
-    protected void DamagePlayer()
+    public void DamagePlayer(Transform playerPosition) //Calculates and applies damage from monster
     {
         float damage = (timeSincePowered - timeUntilSpawn) * damageScale;
-        player.Damage(damage);
+        float damageMultiplier = Vector3.Distance(playerPosition.position, monster.transform.position) / 100;
+        Mathf.Clamp(damageMultiplier, 0.1f, 1f);
+        player.Damage((damage*damageMultiplier)* Time.deltaTime);
+        Debug.Log(damage * damageMultiplier);
     }
-    void TriggerEvent()
+
+    private void TriggerEvent()
     {
         
+    }
+
+    public void IsPowered(bool powered)
+    {
+        isPowered = powered;
     }
 }

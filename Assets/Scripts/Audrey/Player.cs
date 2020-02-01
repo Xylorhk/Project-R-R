@@ -10,13 +10,15 @@ public class Player : MonoBehaviour
     #region Variable Initialization
 
     public GameObject player;
-    public float moveSpeed, rotationSpeed = 2, gravity = 100, oxygenDepletionRate;
+    public float moveSpeed, rotationSpeed = 2, gravity = 100, oxygenDepletionRate = 35, oxygenReplenishRate = 50;
     const float TotalHealth = 100;
     public static float currentHealth;
-    private float oxygen = 100, cameraY, cameraX;
+
+    private float cameraY, cameraX;
     private Vector3 moveDirection;
     private CharacterController charController;
     private Transform playerTrans, cameraTrans;
+    public bool globalOxygen;
 
 
     #endregion
@@ -29,6 +31,7 @@ public class Player : MonoBehaviour
         cameraX = 0f;
         cameraY = 0f;
         currentHealth = TotalHealth;
+        
     }
 
 
@@ -50,11 +53,36 @@ public class Player : MonoBehaviour
         playerTrans.rotation = Quaternion.Euler(0f, cameraX, 0f);
         #endregion
     }
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.tag == "RoomLocation")
+        {
+            if (other.gameObject.GetComponentInParent<Room>().isPowered == false & !globalOxygen)
+            {
+                Damage(oxygenDepletionRate * Time.deltaTime);
+            }
+            else if (other.gameObject.GetComponent<Room>().isPowered | globalOxygen)
+            {
+                Heal(oxygenReplenishRate * Time.deltaTime);
+            }
+
+        } 
+    }
+    private void OnTriggerStay(Collider other)
+    {
+        if (other.tag == "Enemy")
+        {
+            
+            other.SendMessageUpwards("DamagePlayer", playerTrans);
+            
+        }
+    }
 
     public void Damage(float deltaHealth)
     {
         currentHealth -= deltaHealth;
-        if (currentHealth <= 0 | oxygen <= 0)
+        Debug.Log("Current Health: " + currentHealth);
+        if (currentHealth <= 0)
         {
             GameOver();
         }
