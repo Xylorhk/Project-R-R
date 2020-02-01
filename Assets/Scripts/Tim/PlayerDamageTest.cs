@@ -5,8 +5,7 @@ using UnityEngine.UI;
 
 public class PlayerDamageTest : MonoBehaviour
 {
-    //Flag used to tell if the object can be interacted with or not.
-    //public bool isInteractable = false;
+    
     public float TestDamage;
     public Slider HealthBar;
     public float Health = 100;
@@ -26,7 +25,7 @@ public class PlayerDamageTest : MonoBehaviour
     }
     
     /// <summary>
-    /// Is called when there is an object that enters the collider's borders.
+    /// Is called when there is an object that enters the collider's borders. deals damage
     /// </summary>
     /// <param name="other"></param>
     public void OnTriggerStay(Collider other)
@@ -35,10 +34,8 @@ public class PlayerDamageTest : MonoBehaviour
         if (other.tag == "Player")
         {
             Debug.Log("trigger");
-            //turns on interactivity 
-            //isInteractable = true;
             //take player health
-            TakeDamage(5);
+            TakeDamage(1);
             Debug.Log(currentHealth);
 
         }
