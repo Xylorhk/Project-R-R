@@ -3,7 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public interface IInventoryItem
+public class IInventoryItem
 {
     string Name { get; }
     Sprite Image { get; }
