@@ -2,8 +2,9 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class SphereItem : MonoBehaviour, IInventoryItem
+public class SphereItem : MonoBehaviour 
 {
+    IInventoryItem itemI;
     public string Name
     {
         get
@@ -19,8 +20,8 @@ public class SphereItem : MonoBehaviour, IInventoryItem
         get { return _Image; }
     }
 
-    public void OnPickup()
-    {
-        gameObject.SetActive(false);
-    }
+    //public abstract void OnPickup()
+    //{
+    //    gameObject.SetActive(false);
+    //}
 }
