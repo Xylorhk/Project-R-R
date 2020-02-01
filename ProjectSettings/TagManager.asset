@@ -4,7 +4,10 @@
 TagManager:
   serializedVersion: 2
   tags:
-  - Light source
+  - Fire
+  - RoomLocation
+  - Enemy
+  - mainLights
   layers:
   - Default
   - TransparentFX
