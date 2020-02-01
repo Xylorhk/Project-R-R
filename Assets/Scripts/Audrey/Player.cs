@@ -7,14 +7,13 @@ public class Player : MonoBehaviour
     #region Variable Initialization
 
     public GameObject player;
-    public float moveSpeed, rotationSpeed = 2, gravity = 100, oxygenDepletionRate, currentHealth;
+    public float moveSpeed, rotationSpeed = 2, gravity = 100, oxygenDepletionRate;
     const float TotalHealth = 100;
-
+    public static float currentHealth;
     private float oxygen = 100, cameraY, cameraX;
     private Vector3 moveDirection;
     private CharacterController charController;
     private Transform playerTrans, cameraTrans;
-    public static Player Instance;
 
 
     #endregion
