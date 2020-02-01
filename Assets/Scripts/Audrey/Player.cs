@@ -48,6 +48,7 @@ public class Player : MonoBehaviour
         cameraTrans.localRotation = Quaternion.Euler(-cameraY, 0.0f, 0.0f);
         playerTrans.rotation = Quaternion.Euler(0f, cameraX, 0f);
         #endregion
+        Heal(Time.deltaTime * (float)0.1);
     }
 
     public void Damage(float deltaHealth)
