@@ -6,7 +6,7 @@ public class LightSwitch : MonoBehaviour
 {
     Light[] lights;
     bool isLightOn = false;
-    string lightName = "DeckLight";
+    string lightName = "Point Light";
     public float offIntensity = 0.0f, onIntensity = 3.0f;
 
     void Start()
@@ -21,7 +21,7 @@ public class LightSwitch : MonoBehaviour
             }
         }
     }
-    private void OnMouseDown()
+    public void OnMouseDown()
     {
         isLightOn = !isLightOn;
 
@@ -45,10 +45,5 @@ public class LightSwitch : MonoBehaviour
                 }
             }
         }
-        }
-    // Update is called once per frame
-    void Update()
-    {
-        
     }
 }

@@ -80,6 +80,7 @@ public class Room : MonoBehaviour
         float damage = (timeSincePowered - timeUntilSpawn) * damageScale;
         player.Damage(damage);
     }
+    
     void TriggerEvent()
     {
         

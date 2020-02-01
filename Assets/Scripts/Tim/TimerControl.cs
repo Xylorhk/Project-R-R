@@ -4,10 +4,12 @@ using UnityEngine;
 using UnityEngine.UI;
 
 public class TimerControl : MonoBehaviour
-    //initial value of time = 10 min?
+    //initial value of time = 5 min?
 {
     private Text outPutText;
-    public double timeLeft = 120;
+    public float doomCount = 300;
+    const float fullOxygen = 120;
+    public float timeLeft = fullOxygen;
     void Start()
     {
         outPutText = gameObject.GetComponent<Text>();
@@ -20,5 +22,9 @@ public class TimerControl : MonoBehaviour
         {
             //GameOver(); // ends game
         }
+    }
+    public void resetOxygen()
+    {
+        timeLeft = fullOxygen;
     }
 }
