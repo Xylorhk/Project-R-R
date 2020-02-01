@@ -24,7 +24,7 @@ public class Player : MonoBehaviour
         charController = gameObject.GetComponent<CharacterController>();
         player = this.gameObject;
         playerTrans = player.GetComponent<Transform>();
-        cameraTrans = playerTrans.Find("Player Camera").GetComponent<Transform>();
+        cameraTrans = playerTrans.Find("Player Camera");
         cameraX = 0f;
         cameraY = 0f;
         currentHealth = TotalHealth;
