@@ -70,7 +70,7 @@ public class Room : MonoBehaviour
     {
         foreach (GameObject door in doors)
             {
-            door.SetActive(!door.activeSelf); //TODO: change to toggle flag in door.
+            door.SetActive(!door.activeSelf);
         }
     }
 
