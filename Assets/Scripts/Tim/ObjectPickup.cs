@@ -27,6 +27,7 @@ public class ObjectPickup : MonoBehaviour
             if (player.inventory[i] == null)
             {
                 player.inventory[i] = gameObject;
+                //for possible sprites later
                 //itemImages[i].sprite = itemToAdd.sprite;
                 //itemImages[i].enabled = true;
                 break;
