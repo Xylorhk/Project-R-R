@@ -3505,6 +3505,7 @@ GameObject:
   - component: {fileID: 5048888275437467536}
   - component: {fileID: 2176793393686539187}
   - component: {fileID: 7669483490697622403}
+  - component: {fileID: 1582449991}
   m_Layer: 0
   m_Name: Eyeball_low
   m_TagString: Untagged
@@ -3574,6 +3575,19 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+--- !u!114 &1582449991
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3815290302962516800}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5b8b8007de38f2b4daa4adabbc00bb15, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  target: {fileID: 0}
 --- !u!1 &3818757889086362003
 GameObject:
   m_ObjectHideFlags: 0
@@ -4744,7 +4758,7 @@ Light:
   serializedVersion: 10
   m_Type: 2
   m_Shape: 0
-  m_Color: {r: 0.7924528, g: 0.056069765, b: 0.18875097, a: 1}
+  m_Color: {r: 0.7921569, g: 0.16129681, b: 0.054901946, a: 1}
   m_Intensity: 4194304
   m_Range: 25
   m_SpotAngle: 30
