@@ -11,7 +11,7 @@ public class Player : MonoBehaviour
 
     public GameObject player;
     public float moveSpeed, rotationSpeed = 2, gravity = 100, oxygenDepletionRate = 35, oxygenReplenishRate = 50;
-    const float TotalHealth = 100;
+    const float TotalHealth = 100, TotalOxygen = 100;
     public static float currentHealth, currentOxygen;
 
     private float cameraY, cameraX;
@@ -32,7 +32,7 @@ public class Player : MonoBehaviour
         cameraX = 0f;
         cameraY = 0f;
         currentHealth = TotalHealth;
-        currentOxygen = 100;
+        currentOxygen = TotalOxygen;
         
     }
 
@@ -101,7 +101,10 @@ public class Player : MonoBehaviour
             currentHealth += deltaHealth;
         }
     }
-
+    public void replenishOxygen()
+    {
+        currentOxygen = TotalOxygen;
+    }
     public void GameOver()
     {
         Debug.Log("Game Over");

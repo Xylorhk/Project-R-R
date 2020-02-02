@@ -8,7 +8,6 @@ public class ObjectPickup : MonoBehaviour
     //Flag used to tell if the object can be interacted with or not.
     public bool isInteractable = false;
 
-    public Inventory Inventory;
     public Item item;
     public Renderer rend;
     public Player player;
