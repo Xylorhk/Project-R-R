@@ -7,6 +7,7 @@ public class Player : MonoBehaviour
 
     //public Inventory inventory;
 
+    public Pause pause;
     #region Variable Initialization
 
     public GameObject player;
@@ -33,7 +34,7 @@ public class Player : MonoBehaviour
         cameraY = 0f;
         currentHealth = TotalHealth;
         currentOxygen = TotalOxygen;
-        
+        pause = GameObject.Find("Canvas").GetComponent<Pause>();
     }
 
 
@@ -109,7 +110,7 @@ public class Player : MonoBehaviour
     {
         Debug.Log("Game Over");
         
-
+        pause.Defeat(false);
     }
 
     /*public void OnControllerColliderHit(ControllerColliderHit hit)
@@ -123,6 +124,9 @@ public class Player : MonoBehaviour
 
     public void Victory()
     {
+        Debug.Log("You Win!");
 
+        pause.Defeat(true);
+        
     }
 }
