@@ -1,4 +1,4 @@
-﻿u// ToggleLight.cs
+﻿// ToggleLight.cs
 // Turns the light component of this object on/off when the user presses and releases the `L` key.
 
 using System.Collections;

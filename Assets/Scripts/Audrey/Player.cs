@@ -5,7 +5,7 @@ using UnityEngine.SceneManagement;
 public class Player : MonoBehaviour
 {
 
-    public Inventory inventory;
+    //public Inventory inventory;
 
     #region Variable Initialization
 
@@ -108,14 +108,14 @@ public class Player : MonoBehaviour
 
     }
 
-    public void OnControllerColliderHit(ControllerColliderHit hit)
+    /*public void OnControllerColliderHit(ControllerColliderHit hit)
     {
         IInventoryItem item = hit.collider.GetComponent<IInventoryItem>();
         if (item != null)
         {
             inventory.AddItem(item);
         }
-    }
+    }*/
 
     public void Victory()
     {
