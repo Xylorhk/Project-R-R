@@ -46,9 +46,7 @@ public class OxygenSwitch : MonoBehaviour
 					light.color = Color.red;
 					light.intensity = 100000;
 				}
-				yield return new WaitForSeconds(45f);
 				StartCoroutine("RefillOxygen");
-				switchPowered = true;
 			}
 		}
 	}
