@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 using UnityEditor;
 using UnityEngine.SceneManagement;
 
@@ -29,7 +30,7 @@ public class Pause : MonoBehaviour
             }
         }
     }
-    private void PauseGame()
+    public void PauseGame()
     {
         pauseMenu.SetActive(true);
         Time.timeScale = 0f;
@@ -51,5 +52,24 @@ public class Pause : MonoBehaviour
         Scene currentScene = SceneManager.GetActiveScene();
         SceneManager.LoadScene("Menu");
         SceneManager.UnloadSceneAsync(currentScene);
+    }
+    public void Restart()
+    {
+        SceneManager.LoadScene(0);
+    }
+    public void Defeat(bool trust)
+    {
+        PauseGame();
+        transform.Find("ResumeButton").gameObject.SetActive(false);
+        Text titleText = transform.Find("PauseText").GetComponent<Text>();
+
+        if(trust == true)
+        {
+            titleText.text = "You Win!";
+        }
+        else
+        {
+            titleText.text = "You Lose";
+        }
     }
 }

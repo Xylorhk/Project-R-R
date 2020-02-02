@@ -17,7 +17,7 @@ public class Room : MonoBehaviour
     [Tooltip("Whatever should be spawned after power is cut.")]
     public GameObject monster;
     [Header("Modifiers")]
-    [Tooltip("How long to wait before activating the Monster")]
+    [Tooltip("How long to wait before activating the Monster. -1 to disable.")]
     public float timeUntilSpawn;
     [Tooltip("Amount to scale damage to the Player by.")]
     public float damageScale = 1;
@@ -53,7 +53,7 @@ public class Room : MonoBehaviour
             timeSincePowered += Time.deltaTime;
 
         }
-        if (timeSincePowered >= timeUntilSpawn)
+        if (timeSincePowered >= timeUntilSpawn & timeUntilSpawn > 0)
         {
             monster.SetActive(true);
         }
