@@ -871,6 +871,44 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 734000774}
   m_CullTransparentMesh: 0
+--- !u!1 &942174236 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 441535571894537629, guid: 1d5455cf44b916c41bb7c4ef7170342d,
+    type: 3}
+  m_PrefabInstance: {fileID: 4811567201626094402}
+  m_PrefabAsset: {fileID: 0}
+--- !u!95 &942174237 stripped
+Animator:
+  m_CorrespondingSourceObject: {fileID: 6841526773100532468, guid: 1d5455cf44b916c41bb7c4ef7170342d,
+    type: 3}
+  m_PrefabInstance: {fileID: 4811567201626094402}
+  m_PrefabAsset: {fileID: 0}
+--- !u!65 &942174239
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 942174236}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 10, y: 5, z: 15}
+  m_Center: {x: 0, y: 0, z: 45}
+--- !u!114 &942174240
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 942174236}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d7ba12d3d161f1e4a985406d2d0cc503, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Animator: {fileID: 942174237}
 --- !u!1 &942835866
 GameObject:
   m_ObjectHideFlags: 0
@@ -1130,6 +1168,11 @@ PrefabInstance:
       propertyPath: physicalParameters.m_Iso
       value: 200
       objectReference: {fileID: 0}
+    - target: {fileID: 2218462790121048632, guid: efcd48381c345f54b8582447031717dd,
+        type: 3}
+      propertyPath: m_TagString
+      value: Player
+      objectReference: {fileID: 0}
     - target: {fileID: 2218462790121048633, guid: efcd48381c345f54b8582447031717dd,
         type: 3}
       propertyPath: m_LocalPosition.y
@@ -1158,7 +1201,7 @@ PrefabInstance:
     - target: {fileID: 2218462790480627482, guid: efcd48381c345f54b8582447031717dd,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: 49.6
+      value: 32.51
       objectReference: {fileID: 0}
     - target: {fileID: 2218462790480627482, guid: efcd48381c345f54b8582447031717dd,
         type: 3}
@@ -1208,6 +1251,11 @@ PrefabInstance:
     - target: {fileID: 2218462790480627487, guid: efcd48381c345f54b8582447031717dd,
         type: 3}
       propertyPath: m_Name
+      value: Player
+      objectReference: {fileID: 0}
+    - target: {fileID: 2218462790480627487, guid: efcd48381c345f54b8582447031717dd,
+        type: 3}
+      propertyPath: m_TagString
       value: Player
       objectReference: {fileID: 0}
     m_RemovedComponents: []
@@ -1970,41 +2018,6 @@ MonoBehaviour:
   timeUntilSpawn: 3
   damageScale: 1
   scriptedEvent: {fileID: 0}
---- !u!84 &1225007107
-RenderTexture:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_Name: 'Aura Point Light : Shadow Map Render Texture'
-  m_ImageContentsHash:
-    serializedVersion: 2
-    Hash: 00000000000000000000000000000000
-  m_ForcedFallbackFormat: 4
-  m_DownscaleFallback: 0
-  serializedVersion: 3
-  m_Width: 512
-  m_Height: 256
-  m_AntiAliasing: 1
-  m_MipCount: -1
-  m_DepthFormat: 0
-  m_ColorFormat: 52
-  m_MipMap: 0
-  m_GenerateMips: 1
-  m_SRGB: 0
-  m_UseDynamicScale: 0
-  m_BindMS: 0
-  m_EnableCompatibleFormat: 1
-  m_TextureSettings:
-    serializedVersion: 2
-    m_FilterMode: 1
-    m_Aniso: 1
-    m_MipBias: 0
-    m_WrapU: 1
-    m_WrapV: 1
-    m_WrapW: 1
-  m_Dimension: 2
-  m_VolumeDepth: 1
 --- !u!1 &1228883587
 GameObject:
   m_ObjectHideFlags: 0
@@ -2555,6 +2568,41 @@ PrefabInstance:
       objectReference: {fileID: 2100000, guid: 874a0eca95f93344dbaf71c8c8210045, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: eaab6ea3f7a6d704595a59508129b8c8, type: 3}
+--- !u!84 &1350845674
+RenderTexture:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: 'Aura Point Light : Shadow Map Render Texture'
+  m_ImageContentsHash:
+    serializedVersion: 2
+    Hash: 00000000000000000000000000000000
+  m_ForcedFallbackFormat: 4
+  m_DownscaleFallback: 0
+  serializedVersion: 3
+  m_Width: 512
+  m_Height: 256
+  m_AntiAliasing: 1
+  m_MipCount: -1
+  m_DepthFormat: 0
+  m_ColorFormat: 52
+  m_MipMap: 0
+  m_GenerateMips: 1
+  m_SRGB: 0
+  m_UseDynamicScale: 0
+  m_BindMS: 0
+  m_EnableCompatibleFormat: 1
+  m_TextureSettings:
+    serializedVersion: 2
+    m_FilterMode: 1
+    m_Aniso: 1
+    m_MipBias: 0
+    m_WrapU: 1
+    m_WrapV: 1
+    m_WrapW: 1
+  m_Dimension: 2
+  m_VolumeDepth: 1
 --- !u!1 &1358111733
 GameObject:
   m_ObjectHideFlags: 0
@@ -2808,25 +2856,6 @@ MonoBehaviour:
   timeUntilSpawn: 3
   damageScale: 1
   scriptedEvent: {fileID: 0}
---- !u!1 &1582449987 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 3815290302962516800, guid: 1d5455cf44b916c41bb7c4ef7170342d,
-    type: 3}
-  m_PrefabInstance: {fileID: 4811567201626094402}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &1582449991
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1582449987}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5b8b8007de38f2b4daa4adabbc00bb15, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  target: {fileID: 1304872162}
 --- !u!1 &1623811073
 GameObject:
   m_ObjectHideFlags: 0
@@ -3093,7 +3122,7 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1691229497}
   m_CullTransparentMesh: 0
---- !u!84 &1800306226
+--- !u!84 &1738488283
 RenderTexture:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -3844,6 +3873,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1582449991, guid: 1d5455cf44b916c41bb7c4ef7170342d, type: 3}
+      propertyPath: target
+      value: 
+      objectReference: {fileID: 1304872162}
     - target: {fileID: 441535571894537629, guid: 1d5455cf44b916c41bb7c4ef7170342d,
         type: 3}
       propertyPath: m_Name
@@ -3908,21 +3941,11 @@ PrefabInstance:
         type: 3}
       propertyPath: shadowMapRenderTexture
       value: 
-      objectReference: {fileID: 1800306226}
-    - target: {fileID: 4811567203067124626, guid: 1d5455cf44b916c41bb7c4ef7170342d,
+      objectReference: {fileID: 1738488283}
+    - target: {fileID: 4811567203067124622, guid: 1d5455cf44b916c41bb7c4ef7170342d,
         type: 3}
-      propertyPath: m_Color.r
-      value: 0.7921569
-      objectReference: {fileID: 0}
-    - target: {fileID: 4811567203067124626, guid: 1d5455cf44b916c41bb7c4ef7170342d,
-        type: 3}
-      propertyPath: m_Color.g
-      value: 0.16129681
-      objectReference: {fileID: 0}
-    - target: {fileID: 4811567203067124626, guid: 1d5455cf44b916c41bb7c4ef7170342d,
-        type: 3}
-      propertyPath: m_Color.b
-      value: 0.054901946
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 1d5455cf44b916c41bb7c4ef7170342d, type: 3}
