@@ -7,7 +7,7 @@ using UnityEngine.UI;
 public class OxygenSwitch : MonoBehaviour
 {
 	public LifeSupport power;
-	Light light;
+	Light[] lights;
 	public Player player;
 	public bool switchPowered;
 	public bool isInteractable = true;
@@ -15,37 +15,51 @@ public class OxygenSwitch : MonoBehaviour
 
 	void Start()
 	{
+		switchPowered = true;
+		lights = gameObject.GetComponentsInChildren<Light>();
 		Interact.enabled = false;
-		light = gameObject.GetComponentInChildren<Light>();
 		if (switchPowered == true)
 		{
-			light.color = Color.blue;
+			foreach (Light light in lights)
+			{
+				light.color = Color.blue;
+			}
 		}
 		else
 		{
-			light.color = Color.red;
+			foreach (Light light in lights)
+			{
+				light.color = Color.red;
+			}
 		}
 	}
 	void Update()
 	{
 		if (isInteractable && Input.GetKeyDown(KeyCode.F))
 		{
-			//withPart.enabled = false;
 			if (switchPowered)
 			{
-				StartCoroutine("RefillOxygen");
+				Debug.Log("Working");
 				switchPowered = false;
-				light.color = Color.red;
+				foreach (Light light in lights)
+				{
+					light.color = Color.red;
+				}
 				Debug.Log("Switch Occured off");
 				Debug.Log("Interact");
+				StartCoroutine("RefillOxygen");
 			}
 		}
-		//for testing purposes
-		//Debug.Log("Interact");
+	}
+	private void OnTriggerEnter(Collider other)
+	{
+		isInteractable = true;
+		Interact.enabled = true;
 	}
 	private IEnumerable RefillOxygen()
 	{
 		player.replenishOxygen();
+		Debug.Log("Interact");
 		if (player.globalOxygen)
 		{
 			yield return new WaitForSeconds(15f);
@@ -54,7 +68,10 @@ public class OxygenSwitch : MonoBehaviour
 		{
 			yield return new WaitForSeconds(45f);
 		}
-		light.color = Color.blue;
+		foreach (Light light in lights)
+		{
+			light.color = Color.blue;
+		}
 		switchPowered = true;
 	}
 	void OnTriggerExit(Collider other)
