@@ -381,6 +381,8 @@ GameObject:
   m_Component:
   - component: {fileID: 3493666979455172494}
   - component: {fileID: 6841526773100532468}
+  - component: {fileID: 942174239}
+  - component: {fileID: 942174240}
   m_Layer: 0
   m_Name: Elder Etrance
   m_TagString: Untagged
@@ -423,6 +425,33 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!65 &942174239
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 441535571894537629}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 10, y: 5, z: 15}
+  m_Center: {x: 0, y: 0, z: 45}
+--- !u!114 &942174240
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 441535571894537629}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d7ba12d3d161f1e4a985406d2d0cc503, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Animator: {fileID: 6841526773100532468}
+  observationRoom: {fileID: 0}
 --- !u!1 &518697372425432277
 GameObject:
   m_ObjectHideFlags: 0
