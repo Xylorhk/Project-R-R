@@ -12,7 +12,6 @@ public class OxygenSwitch : MonoBehaviour
 	public bool switchPowered;
 	public bool isInteractable = true;
 	public Text Interact;
-
 	void Start()
 	{
 		switchPowered = true;
@@ -23,6 +22,7 @@ public class OxygenSwitch : MonoBehaviour
 			foreach (Light light in lights)
 			{
 				light.color = Color.blue;
+				light.intensity = 200000;
 			}
 		}
 		else
@@ -30,6 +30,7 @@ public class OxygenSwitch : MonoBehaviour
 			foreach (Light light in lights)
 			{
 				light.color = Color.red;
+				light.intensity = 100000;
 			}
 		}
 	}
@@ -44,6 +45,7 @@ public class OxygenSwitch : MonoBehaviour
 				foreach (Light light in lights)
 				{
 					light.color = Color.red;
+					light.intensity = 100000;
 				}
 				Debug.Log("Switch Occured off");
 				Debug.Log("Interact");
@@ -71,6 +73,7 @@ public class OxygenSwitch : MonoBehaviour
 		foreach (Light light in lights)
 		{
 			light.color = Color.blue;
+			light.intensity = 200000;
 		}
 		switchPowered = true;
 	}
