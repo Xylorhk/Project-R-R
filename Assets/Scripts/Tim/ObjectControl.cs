@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class ObjectControl : MonoBehaviour
 {
@@ -13,10 +14,7 @@ public class ObjectControl : MonoBehaviour
         //Checks if the player is in the collider and also if the key is pressed.
         if (isInteractable && Input.GetKeyDown(KeyCode.F))
         {
-            //personalized code can go in here when activated.
-            //power on/timer pause
-            //call function
-            //play audio "Power Restored"(function)
+            
             Debug.Log("Interact");
         }
     }
@@ -32,6 +30,7 @@ public class ObjectControl : MonoBehaviour
         {
             //turns on interactivity 
             isInteractable = true;
+            print("Press F to pick up");
         }
     }
     /// <summary>
