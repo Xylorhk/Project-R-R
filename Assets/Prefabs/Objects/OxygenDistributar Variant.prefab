@@ -1,5 +1,19 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!136 &7673493737683259269
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4725359540765204954}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  m_Radius: 0.6549809
+  m_Height: 1.5
+  m_Direction: 1
+  m_Center: {x: 0, y: 0.6046842, z: 0.65420604}
 --- !u!114 &3351593576014106464
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -15,20 +29,6 @@ MonoBehaviour:
   power: {fileID: 0}
   player: {fileID: 0}
   switchPowered: 0
---- !u!136 &7673493737683259269
-CapsuleCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4725359540765204954}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_Enabled: 1
-  m_Radius: 0.6549809
-  m_Height: 1.5
-  m_Direction: 1
-  m_Center: {x: 0, y: 0.6046842, z: 0.65420604}
 --- !u!1 &4968799627612769383
 GameObject:
   m_ObjectHideFlags: 0
@@ -55,7 +55,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4968799627612769383}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 1.277, z: 0}
+  m_LocalPosition: {x: 0, y: 1.277, z: 69.93775}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 8631290177929008073}
