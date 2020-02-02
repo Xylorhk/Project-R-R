@@ -14,6 +14,8 @@ public class ItemReceptical : MonoBehaviour
     public bool isRepaired;
     public bool found;
     public GameObject objectName;
+    public Text withPart;
+    public Text withoutPart;
     private void Start()
     {
         player = GameObject.Find("Player").GetComponent<Player>();
@@ -53,11 +55,11 @@ public class ItemReceptical : MonoBehaviour
             {
                 //turns on interactivity 
                 isInteractable = true;
-                print("press F to repair");
+                withPart.text = "press F to repair";
             }
             else
             {
-                print("Requires Reactor part to Repair");
+                withoutPart.text = "Requires Reactor part to Repair";
             }
         }
     }
