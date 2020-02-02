@@ -255,22 +255,23 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 'Project Lead
+  m_Text: 'Project Lead, Mascot
+
+    Programming, Design
 
     Programming
-
-    Programming
-
-    Models, Textures
 
     Models,
     Textures
 
-    Technical Artist
+    Models, Textures
+
+    Technical Lead
 
     Models, Textures, UI
 
-    Models, Textures'
+    Models,
+    Textures'
 --- !u!222 &25582639
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -842,7 +843,7 @@ MonoBehaviour:
 
     Tim Wakefield
 
-    Johnathan Blaxton
+    Jonathan Blaxton
 
     Amanda Lambright
 

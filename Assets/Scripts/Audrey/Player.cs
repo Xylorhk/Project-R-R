@@ -8,6 +8,7 @@ public class Player : MonoBehaviour
     //public Inventory inventory;
 
     public Pause pause;
+    public GameObject pauseMenu;
     #region Variable Initialization
 
     public GameObject player;
@@ -22,6 +23,8 @@ public class Player : MonoBehaviour
     public bool globalOxygen, canBreath = false;
     public GameObject[] inventory;
 
+    private GameObject[] repairObjects;
+
 
     #endregion
     void Start()
@@ -34,13 +37,16 @@ public class Player : MonoBehaviour
         cameraY = 0f;
         currentHealth = TotalHealth;
         currentOxygen = TotalOxygen;
-        pause = GameObject.Find("Canvas").GetComponent<Pause>();
+        pauseMenu = GameObject.Find("UI");
+        
+        repairObjects = GameObject.FindGameObjectsWithTag("Repair");
     }
 
     private void Update()
     {
         if (canBreath) currentOxygen = TotalOxygen;
         else AdjustAir(-oxygenDepletionRate * Time.deltaTime);
+            if (Repaired()) Victory();
     }
     void FixedUpdate()
     {
@@ -70,6 +76,14 @@ public class Player : MonoBehaviour
             }
 
         } 
+    }
+    private bool Repaired()
+    {
+        foreach (GameObject repairable in repairObjects)
+        {
+            if (!repairable.GetComponent<ItemReceptical>().isRepaired) return false;
+        }
+        return true;
     }
     private void OnTriggerExit(Collider other)
     {
@@ -101,6 +115,7 @@ public class Player : MonoBehaviour
     public void AdjustAir(float deltaOxygen)
     {
         currentOxygen += deltaOxygen;
+        if (currentOxygen <= 0f) GameOver();
     }
 
     public void Heal( float deltaHealth)
@@ -118,7 +133,7 @@ public class Player : MonoBehaviour
     {
         Debug.Log("Game Over");
         
-        pause.Defeat(false);
+        pauseMenu.GetComponent<Pause>().Defeat(false);
     }
 
     /*public void OnControllerColliderHit(ControllerColliderHit hit)
@@ -134,7 +149,7 @@ public class Player : MonoBehaviour
     {
         Debug.Log("You Win!");
 
-        pause.Defeat(true);
+        pauseMenu.GetComponent<Pause>().Defeat(true);
         
     }
 }
