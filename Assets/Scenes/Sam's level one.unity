@@ -1158,7 +1158,7 @@ PrefabInstance:
     - target: {fileID: 2218462790480627482, guid: efcd48381c345f54b8582447031717dd,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: -0.21162654
+      value: 49.6
       objectReference: {fileID: 0}
     - target: {fileID: 2218462790480627482, guid: efcd48381c345f54b8582447031717dd,
         type: 3}
@@ -1593,41 +1593,6 @@ GameObject:
     type: 3}
   m_PrefabInstance: {fileID: 1109530135}
   m_PrefabAsset: {fileID: 0}
---- !u!84 &1109881020
-RenderTexture:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_Name: 'Aura Point Light : Shadow Map Render Texture'
-  m_ImageContentsHash:
-    serializedVersion: 2
-    Hash: 00000000000000000000000000000000
-  m_ForcedFallbackFormat: 4
-  m_DownscaleFallback: 0
-  serializedVersion: 3
-  m_Width: 512
-  m_Height: 256
-  m_AntiAliasing: 1
-  m_MipCount: -1
-  m_DepthFormat: 0
-  m_ColorFormat: 52
-  m_MipMap: 0
-  m_GenerateMips: 1
-  m_SRGB: 0
-  m_UseDynamicScale: 0
-  m_BindMS: 0
-  m_EnableCompatibleFormat: 1
-  m_TextureSettings:
-    serializedVersion: 2
-    m_FilterMode: 1
-    m_Aniso: 1
-    m_MipBias: 0
-    m_WrapU: 1
-    m_WrapV: 1
-    m_WrapW: 1
-  m_Dimension: 2
-  m_VolumeDepth: 1
 --- !u!114 &1122056271
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2005,6 +1970,41 @@ MonoBehaviour:
   timeUntilSpawn: 3
   damageScale: 1
   scriptedEvent: {fileID: 0}
+--- !u!84 &1225007107
+RenderTexture:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: 'Aura Point Light : Shadow Map Render Texture'
+  m_ImageContentsHash:
+    serializedVersion: 2
+    Hash: 00000000000000000000000000000000
+  m_ForcedFallbackFormat: 4
+  m_DownscaleFallback: 0
+  serializedVersion: 3
+  m_Width: 512
+  m_Height: 256
+  m_AntiAliasing: 1
+  m_MipCount: -1
+  m_DepthFormat: 0
+  m_ColorFormat: 52
+  m_MipMap: 0
+  m_GenerateMips: 1
+  m_SRGB: 0
+  m_UseDynamicScale: 0
+  m_BindMS: 0
+  m_EnableCompatibleFormat: 1
+  m_TextureSettings:
+    serializedVersion: 2
+    m_FilterMode: 1
+    m_Aniso: 1
+    m_MipBias: 0
+    m_WrapU: 1
+    m_WrapV: 1
+    m_WrapW: 1
+  m_Dimension: 2
+  m_VolumeDepth: 1
 --- !u!1 &1228883587
 GameObject:
   m_ObjectHideFlags: 0
@@ -2307,6 +2307,12 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 7087532008955882392, guid: 662555d03b96e014f8b37e5c1e265cee,
     type: 3}
   m_PrefabInstance: {fileID: 1268212839}
+  m_PrefabAsset: {fileID: 0}
+--- !u!4 &1304872162 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 2218462790480627482, guid: efcd48381c345f54b8582447031717dd,
+    type: 3}
+  m_PrefabInstance: {fileID: 1038683781}
   m_PrefabAsset: {fileID: 0}
 --- !u!1 &1331936655
 GameObject:
@@ -2802,6 +2808,25 @@ MonoBehaviour:
   timeUntilSpawn: 3
   damageScale: 1
   scriptedEvent: {fileID: 0}
+--- !u!1 &1582449987 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3815290302962516800, guid: 1d5455cf44b916c41bb7c4ef7170342d,
+    type: 3}
+  m_PrefabInstance: {fileID: 4811567201626094402}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1582449991
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1582449987}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5b8b8007de38f2b4daa4adabbc00bb15, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  target: {fileID: 1304872162}
 --- !u!1 &1623811073
 GameObject:
   m_ObjectHideFlags: 0
@@ -3822,7 +3847,7 @@ PrefabInstance:
     - target: {fileID: 441535571894537629, guid: 1d5455cf44b916c41bb7c4ef7170342d,
         type: 3}
       propertyPath: m_Name
-      value: Elder Etrance (1)
+      value: Elder
       objectReference: {fileID: 0}
     - target: {fileID: 3493666979455172494, guid: 1d5455cf44b916c41bb7c4ef7170342d,
         type: 3}
