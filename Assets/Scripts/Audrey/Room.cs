@@ -39,7 +39,7 @@ public class Room : MonoBehaviour
     {
         if (isPowered != powerState)
         {
-            TogglePower();
+            //TogglePower();
         }
         if (isPowered & timeSincePowered > 0f)
         {
@@ -57,9 +57,9 @@ public class Room : MonoBehaviour
         }
     }
 
-    private void TogglePower()
+    public void TogglePower()
     {
-        isPowered = !isPowered;
+        isPowered =! isPowered; 
         ToggleDoors();
         if (timesToggled < 1) TriggerEvent();
         timesToggled++;
@@ -94,5 +94,9 @@ public class Room : MonoBehaviour
     public void IsPowered(bool powered)
     {
         isPowered = powered;
+    }
+    public void switchPower()
+    {
+        isPowered = !isPowered;
     }
 }
