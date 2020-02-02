@@ -32,7 +32,7 @@ public class OxygenSwitch : MonoBehaviour
 	{
 		if (power.isPowered)
 		{
-			player.replenishOxygen()
+			player.replenishOxygen();
 			power.TogglePower();
 			light.color = Color.red;
 			Debug.Log("Switch Occured off");

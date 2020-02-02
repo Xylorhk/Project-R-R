@@ -105,7 +105,6 @@ public class Player : MonoBehaviour
     {
         currentOxygen = TotalOxygen;
     }
-
     public void GameOver()
     {
         Debug.Log("Game Over");
