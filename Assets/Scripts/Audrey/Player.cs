@@ -12,7 +12,7 @@ public class Player : MonoBehaviour
 
     public GameObject player;
     public float moveSpeed, rotationSpeed = 2, gravity = 100, oxygenDepletionRate = 35, oxygenReplenishRate = 50;
-    const float TotalHealth = 100, TotalOxygen = 100;
+    public const float TotalHealth = 100, TotalOxygen = 100;
     public float currentHealth, currentOxygen;
 
     private float cameraY, cameraX;
