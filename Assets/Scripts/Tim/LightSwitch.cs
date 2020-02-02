@@ -6,7 +6,7 @@ public class LightSwitch : MonoBehaviour
 {
     Light[] lights;
     bool isLightOn = false;
-    string lightName = "MainLights";
+    string lightName = "mainLights";
     public float offIntensity = 0.0f, onIntensity = 3.0f;
 
     void Start()
