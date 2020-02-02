@@ -36,7 +36,7 @@ public class HealthBar : MonoBehaviour
     {
 
         //the player's health
-        barDisplay = Player.currentHealth / 100; //Player.totalHealth;
+        //barDisplay = Player.currentHealth / 100; //Player.totalHealth;
     }
 
 }

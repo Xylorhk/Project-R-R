@@ -13,13 +13,13 @@ public class Player : MonoBehaviour
     public GameObject player;
     public float moveSpeed, rotationSpeed = 2, gravity = 100, oxygenDepletionRate = 35, oxygenReplenishRate = 50;
     const float TotalHealth = 100, TotalOxygen = 100;
-    public static float currentHealth, currentOxygen;
+    public float currentHealth, currentOxygen;
 
     private float cameraY, cameraX;
     private Vector3 moveDirection;
     private CharacterController charController;
     private Transform playerTrans, cameraTrans;
-    public bool globalOxygen;
+    public bool globalOxygen, canBreath = false;
     public GameObject[] inventory;
 
 
@@ -37,7 +37,11 @@ public class Player : MonoBehaviour
         pause = GameObject.Find("Canvas").GetComponent<Pause>();
     }
 
-
+    private void Update()
+    {
+        if (canBreath) currentOxygen = TotalOxygen;
+        else AdjustAir(-oxygenDepletionRate * Time.deltaTime);
+    }
     void FixedUpdate()
     {
         #region Character Movement
@@ -60,16 +64,20 @@ public class Player : MonoBehaviour
     {
         if (other.tag == "RoomLocation")
         {
-            if (!globalOxygen & !other.gameObject.GetComponentInParent<Room>().alwaysBreathable)
+             if (other.gameObject.GetComponentInParent<Room>().alwaysBreathable)
             {
-                Damage(-oxygenDepletionRate * Time.deltaTime);
-            }
-            else if (globalOxygen | other.gameObject.GetComponentInParent<Room>().alwaysBreathable)
-            {
-                AdjustAir(oxygenReplenishRate * Time.deltaTime);
+                canBreath = true;
             }
 
         } 
+    }
+    private void OnTriggerExit(Collider other)
+    {
+        if (other.tag == "RoomLocation")
+        {
+            canBreath = false;
+
+        }
     }
     private void OnTriggerStay(Collider other)
     {
