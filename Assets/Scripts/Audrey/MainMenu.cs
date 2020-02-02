@@ -20,7 +20,7 @@ public class MainMenu : MonoBehaviour
    public void StartGame()
     {
         Scene currentScene = SceneManager.GetActiveScene();
-        SceneManager.LoadScene("WhiteBoxLevel");
+        SceneManager.LoadScene(1);
         SceneManager.UnloadSceneAsync(currentScene);
     }
    public void GoToOptions()
