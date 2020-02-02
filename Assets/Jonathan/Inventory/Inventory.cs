@@ -7,6 +7,7 @@ public class Inventory : MonoBehaviour
 {
     public Image[] itemImages = new Image[numItemSlots];
     public Item[] items = new Item[numItemSlots];
+    public bool hasObject1;
 
     public const int numItemSlots = 4;
 
