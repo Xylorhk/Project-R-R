@@ -1,7 +1,4 @@
-﻿// ToggleLight.cs
-// Turns the light component of this object on/off when the user presses and releases the `L` key.
-
-using System;
+﻿using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -11,13 +8,12 @@ public class OxygenSwitch : MonoBehaviour
 	public LifeSupport power;
 	Light light;
 	public Player player;
+	public bool switchPowered;
 
-
-	// Use this for initialization
 	void Start()
 	{
 		light = gameObject.GetComponentInChildren<Light>();
-		if (power.isPowered == true)
+		if (switchPowered == true)
 		{
 			light.color = Color.blue;
 		}
@@ -26,24 +22,28 @@ public class OxygenSwitch : MonoBehaviour
 			light.color = Color.red;
 		}
 	}
-
-
 	public void OnMouseDown()
 	{
-		if (power.isPowered)
+		if (switchPowered)
 		{
-			player.replenishOxygen();
-			power.TogglePower();
+			StartCoroutine("RefillOxygen");
+			switchPowered = false;
 			light.color = Color.red;
 			Debug.Log("Switch Occured off");
 		}
-
+	}
+	private IEnumerable RefillOxygen()
+	{
+		player.replenishOxygen();
+		if (player.globalOxygen)
+		{
+			yield return new WaitForSeconds(15f);
+		}
 		else
 		{
-			power.TogglePower();
-			light.color = Color.blue;
-			Debug.Log("Switch Occured on");
-			Debug.Log(power.isPowered);
+			yield return new WaitForSeconds(45f);
 		}
+		light.color = Color.blue;
+		switchPowered = true;
 	}
 }
