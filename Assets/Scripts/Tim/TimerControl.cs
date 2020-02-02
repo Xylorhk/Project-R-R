@@ -18,6 +18,7 @@ public class TimerControl : MonoBehaviour
     {
         outPutText.text = timeLeft.ToString();
         timeLeft -= Time.deltaTime;
+
     }
     public void resetOxygen()
     {

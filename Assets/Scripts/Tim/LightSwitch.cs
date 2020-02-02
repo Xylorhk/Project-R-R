@@ -6,16 +6,17 @@ public class LightSwitch : MonoBehaviour
 {
     Light[] lights;
     bool isLightOn = false;
-    string lightName = "Point Light";
+    string lightName = "MainLights";
     public float offIntensity = 0.0f, onIntensity = 3.0f;
 
     void Start()
     {
-        lights = GetComponentInChildren<Light[]>();
+        lights = gameObject.GetComponentsInChildren<Light>();
         //Debug.Log(lights.length);
         foreach (Light light in lights)
         {
-            if (light.name == lightName)
+            //add tags for lights
+            if (light.tag == lightName)
             {
                 light.intensity = offIntensity;
             }
