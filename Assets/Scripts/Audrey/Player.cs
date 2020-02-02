@@ -19,6 +19,7 @@ public class Player : MonoBehaviour
     private CharacterController charController;
     private Transform playerTrans, cameraTrans;
     public bool globalOxygen;
+    public GameObject[] inventory;
 
 
     #endregion

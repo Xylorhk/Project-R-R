@@ -3,6 +3,6 @@
 [CreateAssetMenu]
 public class Item : ScriptableObject
 {
-    public Sprite sprite;
+    //public Sprite sprite;
     public GameObject itemObject;
 }
