@@ -2,6 +2,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class OxygenSwitch : MonoBehaviour
 {
@@ -9,9 +10,12 @@ public class OxygenSwitch : MonoBehaviour
 	Light light;
 	public Player player;
 	public bool switchPowered;
+	public bool isInteractable = true;
+	public Text Interact;
 
 	void Start()
 	{
+		Interact.enabled = false;
 		light = gameObject.GetComponentInChildren<Light>();
 		if (switchPowered == true)
 		{
@@ -22,15 +26,22 @@ public class OxygenSwitch : MonoBehaviour
 			light.color = Color.red;
 		}
 	}
-	public void OnMouseDown()
+	void Update()
 	{
-		if (switchPowered)
+		if (isInteractable && Input.GetKeyDown(KeyCode.F))
 		{
-			StartCoroutine("RefillOxygen");
-			switchPowered = false;
-			light.color = Color.red;
-			Debug.Log("Switch Occured off");
+			//withPart.enabled = false;
+			if (switchPowered)
+			{
+				StartCoroutine("RefillOxygen");
+				switchPowered = false;
+				light.color = Color.red;
+				Debug.Log("Switch Occured off");
+				Debug.Log("Interact");
+			}
 		}
+		//for testing purposes
+		//Debug.Log("Interact");
 	}
 	private IEnumerable RefillOxygen()
 	{
@@ -45,5 +56,12 @@ public class OxygenSwitch : MonoBehaviour
 		}
 		light.color = Color.blue;
 		switchPowered = true;
+	}
+	void OnTriggerExit(Collider other)
+	{
+		//compares the tag of the object exiting this collider.
+			//turns off interactivity 
+			isInteractable = false;
+			Interact.enabled = false;
 	}
 }
