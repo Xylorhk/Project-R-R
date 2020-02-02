@@ -5,14 +5,14 @@ using UnityEngine.SceneManagement;
 public class Player : MonoBehaviour
 {
 
-    public Inventory inventory;
+    //public Inventory inventory;
 
     #region Variable Initialization
 
     public GameObject player;
     public float moveSpeed, rotationSpeed = 2, gravity = 100, oxygenDepletionRate = 35, oxygenReplenishRate = 50;
     const float TotalHealth = 100;
-    public static float currentHealth;
+    public static float currentHealth, currentOxygen;
 
     private float cameraY, cameraX;
     private Vector3 moveDirection;
@@ -31,6 +31,7 @@ public class Player : MonoBehaviour
         cameraX = 0f;
         cameraY = 0f;
         currentHealth = TotalHealth;
+        currentOxygen = 100;
         
     }
 
@@ -57,13 +58,13 @@ public class Player : MonoBehaviour
     {
         if (other.tag == "RoomLocation")
         {
-            if (other.gameObject.GetComponentInParent<Room>().isPowered == false & !globalOxygen)
+            if (!globalOxygen & !other.gameObject.GetComponentInParent<Room>().alwaysBreathable)
             {
-                Damage(oxygenDepletionRate * Time.deltaTime);
+                Damage(-oxygenDepletionRate * Time.deltaTime);
             }
-            else if (other.gameObject.GetComponent<Room>().isPowered | globalOxygen)
+            else if (globalOxygen | other.gameObject.GetComponentInParent<Room>().alwaysBreathable)
             {
-                Heal(oxygenReplenishRate * Time.deltaTime);
+                AdjustAir(oxygenReplenishRate * Time.deltaTime);
             }
 
         } 
@@ -87,6 +88,10 @@ public class Player : MonoBehaviour
             GameOver();
         }
     }
+    public void AdjustAir(float deltaOxygen)
+    {
+        currentOxygen += deltaOxygen;
+    }
 
     public void Heal( float deltaHealth)
     {
@@ -95,6 +100,7 @@ public class Player : MonoBehaviour
             currentHealth += deltaHealth;
         }
     }
+
     public void GameOver()
     {
         Debug.Log("Game Over");
@@ -102,14 +108,14 @@ public class Player : MonoBehaviour
 
     }
 
-    public void OnControllerColliderHit(ControllerColliderHit hit)
+    /*public void OnControllerColliderHit(ControllerColliderHit hit)
     {
         IInventoryItem item = hit.collider.GetComponent<IInventoryItem>();
         if (item != null)
         {
             inventory.AddItem(item);
         }
-    }
+    }*/
 
     public void Victory()
     {

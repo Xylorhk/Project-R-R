@@ -9,6 +9,8 @@ public class Room : MonoBehaviour
     public bool isPowered;
     [Tooltip("When true, provides oxygen while room is powered")]
     public bool providesOxygen = false;
+    [Tooltip("When true, always provides oxygen to the player regardless of providesOxygen setting")]
+    public bool alwaysBreathable = false;
     [Header("GameObjects")]
     [Tooltip("All doors this room's power toggle will control")]
     public GameObject[] doors = new GameObject[3];
