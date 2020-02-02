@@ -1,9 +1,5 @@
 fileFormatVersion: 2
-<<<<<<< HEAD:Assets/Jonathan/WinLose.meta
-guid: 49fd26fbaa9bd434f9e4cd6819823a0f
-=======
-guid: 08d9fd0f4c10000001e9fd0f4c100000
->>>>>>> 002b1dd5e53c44df6db5f417adabe2e077654929:Assets/Models/Enemy.meta
+guid: 5238e6ad6d8fa884fbb6c2efebd51232
 folderAsset: yes
 DefaultImporter:
   externalObjects: {}

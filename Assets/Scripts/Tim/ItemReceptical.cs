@@ -54,7 +54,9 @@ public class ItemReceptical : MonoBehaviour
         Debug.Log("scanning");
         
             Debug.Log("Scanned");
-            //Compares the tag of the object entering this collider.
+        //Compares the tag of the object entering this collider.
+        if (!isRepaired)
+        {
             if (other.tag == "Player" && found == true)
             {
                 //turns on interactivity 
@@ -62,11 +64,12 @@ public class ItemReceptical : MonoBehaviour
                 hasPart = true;
                 withPart.enabled = true;
 
-        }
+            }
             else
             {
                 withoutPart.enabled = true;
             }
+        }  
     }
         
         // Is called when there is an object that leaves the collider's borders.
@@ -77,7 +80,5 @@ public class ItemReceptical : MonoBehaviour
                 isInteractable = false;
                 withPart.enabled = false;
                 withoutPart.enabled = false;
-
-
         }
     }
