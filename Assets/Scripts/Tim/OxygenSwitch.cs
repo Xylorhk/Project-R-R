@@ -40,16 +40,15 @@ public class OxygenSwitch : MonoBehaviour
 		{
 			if (switchPowered)
 			{
-				Debug.Log("Working");
 				switchPowered = false;
 				foreach (Light light in lights)
 				{
 					light.color = Color.red;
 					light.intensity = 100000;
 				}
-				Debug.Log("Switch Occured off");
-				Debug.Log("Interact");
+				yield return new WaitForSeconds(45f);
 				StartCoroutine("RefillOxygen");
+				switchPowered = true;
 			}
 		}
 	}
