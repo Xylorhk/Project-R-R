@@ -7,7 +7,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class Singlelightswitch : MonoBehaviour
+public class Consolelightswitch : MonoBehaviour
 {
 	public Room power;
 	Light light;
