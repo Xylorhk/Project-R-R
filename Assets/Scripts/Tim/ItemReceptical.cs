@@ -5,7 +5,6 @@ using UnityEngine.UI;
 
 public class ItemReceptical : MonoBehaviour
 {
-    //Flag used to tell if the object can be interacted with or not.
     public bool isInteractable = false;
     public bool hasPart = false;
     public bool needsPart = false;
@@ -21,8 +20,8 @@ public class ItemReceptical : MonoBehaviour
     {
         player = GameObject.Find("Player").GetComponent<Player>();
         rend = GetComponent<Renderer>();
-        withPart.enabled = hasPart;
-        withoutPart.enabled = needsPart;
+        withPart.enabled = false;
+        withoutPart.enabled = false;
         //rend.enabled = true;
         //item.itemObject = gameObject;
         //objectName = GameObject.GetComponent<ReactorPart>();
@@ -35,13 +34,9 @@ public class ItemReceptical : MonoBehaviour
             isRepaired = true;
             Debug.Log("Interact");
         }
-        //for testing purposes
-        //Debug.Log("Interact");
     }
-    /// <summary>
-    /// Is called when there is an object that enters the collider's borders.
-    /// </summary>
-    /// <param name="other"></param>
+    
+    // Is called when there is an object that enters the collider's borders.
     public void OnTriggerEnter(Collider other)
     {
         if(!isRepaired)
@@ -70,22 +65,19 @@ public class ItemReceptical : MonoBehaviour
         }
             else
             {
-                withoutPart.text = "Requires Reactor part to Repair";
                 withoutPart.enabled = true;
             }
     }
-        /// <summary>
-        /// Is called when there is an object that leaves the collider's borders.
-        /// </summary>
-        /// <param name="other"></param>
+        
+        // Is called when there is an object that leaves the collider's borders.
          void OnTriggerExit(Collider other)
         {
             //compares the tag of the object exiting this collider.
-            if (other.tag == "Player")
-            {
                 //turns off interactivity 
                 isInteractable = false;
                 withPart.enabled = false;
-        }
+                withoutPart.enabled = false;
+
+
         }
     }
