@@ -7,7 +7,8 @@ using UnityEngine.SceneManagement;
 
 public class Pause : MonoBehaviour
 {
-    public GameObject pauseMenu;   
+    public GameObject pauseMenu, titleText;   
+   
     void Awake()
     {
         if (!pauseMenu) pauseMenu = GameObject.Find("Menu_Pause");
@@ -59,17 +60,17 @@ public class Pause : MonoBehaviour
     }
     public void Defeat(bool trust)
     {
-        PauseGame();
+        pauseMenu.SetActive(true);
         transform.Find("ResumeButton").gameObject.SetActive(false);
-        Text titleText = transform.Find("PauseText").GetComponent<Text>();
 
         if(trust == true)
         {
-            titleText.text = "You Win!";
+            titleText.GetComponent<Text>().text = "You Win!";
         }
         else
         {
-            titleText.text = "You Lose";
+            titleText.GetComponent<Text>().text = "You Lose";
         }
+        Time.timeScale = 0f;
     }
 }
