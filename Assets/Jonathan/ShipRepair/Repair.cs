@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Repair : MonoBehaviour
 {
-    public bol isInteractable = false;
+    public bool isInteractable = false;
     public Item item;
     public Renderer rend;
     public Player player;
